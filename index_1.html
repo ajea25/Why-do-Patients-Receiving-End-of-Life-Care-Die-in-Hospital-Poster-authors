@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poster Research Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: single reading column sized for a phone held after a QR scan; affiliation key up top, authors in poster order below */
+:root{
+  --bg:#F5F7F6;
+  --surface:#FFFFFF;
+  --fg:#1B2826;
+  --muted:#5A6A67;
+  --line:#DCE3E1;
+  --accent:#2E6A61;
+  --accent-soft:#E3EEEB;
+  --sup:#9A5B2A;
+  --display:"Newsreader", Georgia, "Times New Roman", serif;
+  --body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111917; --surface:#18221F; --fg:#E4ECEA; --muted:#9BACA8; --line:#2A3835;
+    --accent:#7CC4B7; --accent-soft:#1F332F; --sup:#E0A774; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111917; --surface:#18221F; --fg:#E4ECEA; --muted:#9BACA8; --line:#2A3835;
+  --accent:#7CC4B7; --accent-soft:#1F332F; --sup:#E0A774; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1rem;line-height:1.6}
+.wrap{max-width:44rem;margin:0 auto;padding-inline:1.25rem;padding-block:2.5rem 3.5rem;display:flex;flex-direction:column;gap:2.5rem}
+header{display:flex;flex-direction:column;gap:.75rem}
+.eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(2.1rem,7vw,3rem);line-height:1.08;margin:0;text-wrap:balance}
+.lede{color:var(--muted);margin:0;max-width:36rem}
+.byline{font-family:var(--display);font-size:1.15rem;line-height:1.5;margin:0;text-wrap:balance}
+.byline a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
+.byline a:hover{border-color:var(--accent)}
+sup{color:var(--sup);font-family:var(--body);font-size:.62em;font-weight:600;margin-left:.08em;font-variant-numeric:tabular-nums}
+
+.key{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:1rem}
+.key h2,.section-h{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 .6rem}
+.key ol{list-style:none;margin:0;padding:0;display:grid;gap:.35rem;font-size:.9rem}
+.key li{display:grid;grid-template-columns:1.4rem 1fr;gap:.25rem}
+.key .n{color:var(--sup);font-weight:600;font-variant-numeric:tabular-nums}
+
+.authors{display:flex;flex-direction:column;gap:1rem;margin:0;padding:0;list-style:none}
+.author{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.4rem 1.25rem;display:grid;grid-template-columns:2.25rem 1fr;gap:.25rem 1rem;scroll-margin-top:1rem}
+.pos{font-family:var(--display);font-size:1.6rem;line-height:1.1;color:var(--accent);font-variant-numeric:tabular-nums}
+.content{min-width:0;display:flex;flex-direction:column;gap:.7rem}
+.author h3{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.2;margin:0}
+.cred{font-family:var(--body);font-size:.85rem;font-weight:500;color:var(--muted);margin-left:.35rem;letter-spacing:.02em}
+.role{margin:0;font-weight:500;font-size:.95rem;color:var(--accent)}
+.affil{margin:0;font-size:.85rem;color:var(--muted);display:flex;flex-direction:column;gap:.1rem}
+.bio{margin:0;max-width:65ch}
+.links{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0;list-style:none}
+.links a{display:inline-flex;align-items:center;gap:.35rem;font-size:.85rem;font-weight:500;color:var(--accent);background:var(--accent-soft);text-decoration:none;padding:.35rem .7rem;border-radius:999px}
+.links a:hover{text-decoration:underline}
+.links a:focus-visible,.byline a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.links svg{width:.8em;height:.8em;flex:none}
+footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1rem}
+@media (max-width:420px){
+  .author{grid-template-columns:1fr}
+  .pos{font-size:1.1rem}
+}
+body{margin:0}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Poster authors · Hôpital Montfort, Ottawa</span>
+    <h1>Meet the research team</h1>
+    <p class="lede">The clinicians and researchers behind this poster, listed in author order, with their affiliations and where to learn more about their work.</p>
+    <p class="byline">
+      <a href="#gratton">Valérie Gratton, MD</a><sup>1,2,3</sup>,
+      <a href="#roberts">Anne Roberts, RN</a><sup>1</sup>,
+      <a href="#jeanningros">Alice Jeanningros</a><sup>2,7</sup>,
+      <a href="#parsons">Henrique Parsons, MD</a><sup>3,4</sup>,
+      <a href="#bouattane">El-Mostafa Bouattane, MD</a><sup>1,2</sup>,
+      <a href="#isenberg">Sarina R. Isenberg, PhD</a><sup>5,6</sup>
+    </p>
+  </header>
+
+  <section class="key" aria-labelledby="key-h">
+    <h2 id="key-h">Affiliations</h2>
+    <ol>
+      <li><span class="n">1</span><span>Hôpital Montfort, Ottawa, Ontario</span></li>
+      <li><span class="n">2</span><span>Institut du Savoir Montfort, Ottawa, Ontario</span></li>
+      <li><span class="n">3</span><span>Division of Palliative Care, Faculty of Medicine, University of Ottawa</span></li>
+      <li><span class="n">4</span><span>The Ottawa Hospital, Ottawa, Ontario</span></li>
+      <li><span class="n">5</span><span>Bruyère Health Research Institute, Ottawa, Ontario</span></li>
+      <li><span class="n">6</span><span>Department of Medicine and School of Epidemiology and Public Health, University of Ottawa</span></li>
+      <li><span class="n">7</span><span>Université du Québec en Outaouais, Gatineau, Québec</span></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="authors-h">
+    <h2 class="section-h" id="authors-h">Authors</h2>
+    <ol class="authors">
+
+      <li class="author" id="gratton">
+        <span class="pos" aria-hidden="true">1</span>
+        <div class="content">
+          <h3>Valérie Gratton<span class="cred">MD</span></h3>
+          <p class="role">Palliative care consultant · Assistant Professor</p>
+          <p class="affil"><span><sup>1</sup> Hôpital Montfort</span><span><sup>2</sup> Institut du Savoir Montfort</span><span><sup>3</sup> Division of Palliative Care, University of Ottawa</span></p>
+          <p class="bio">Dr. Valérie Gratton is a palliative care consultant at Hôpital Montfort, where she founded the palliative care service in 2011. She completed her family medicine residency and an additional year of palliative care training at the University of Ottawa. As Assistant Professor in the Division of Palliative Care, she coordinates undergraduate palliative care education and teaches medical students, residents and fellows. Her research focuses on palliative care for non-cancer illnesses, new models that bring palliative care into every stage of the care continuum, communication in palliative care, and the end-of-life needs of French-speaking Ontarians.</p>
+          <ul class="links">
+            <li><a href="https://savoirmontfort.ca/en/scientifiques/valerie-gratton-md" target="_blank" rel="noopener">Institut du Savoir Montfort profile<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></li>
+            <li><a href="https://hopitalmontfort.com/en/care-admin/palliative-care" target="_blank" rel="noopener">Montfort palliative care<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="author" id="roberts">
+        <span class="pos" aria-hidden="true">2</span>
+        <div class="content">
+          <h3>Anne Roberts<span class="cred">RN</span></h3>
+          <p class="role">Advanced practice nurse</p>
+          <p class="affil"><span><sup>1</sup> Hôpital Montfort</span></p>
+          <p class="bio">Anne Roberts is an advanced practice nurse at Hôpital Montfort. She brings her clinical experience to the project and leads the chart review, applying the study criteria to each patient record.</p>
+          <ul class="links">
+            <li><a href="https://hopitalmontfort.com/en" target="_blank" rel="noopener">Hôpital Montfort<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="author" id="jeanningros">
+        <span class="pos" aria-hidden="true">3</span>
+        <div class="content">
+          <h3>Alice Jeanningros</h3>
+          <p class="role">Research assistant · Doctoral candidate in psychology</p>
+          <p class="affil"><span><sup>2</sup> Institut du Savoir Montfort</span><span><sup>7</sup> Université du Québec en Outaouais</span></p>
+          <p class="bio">Alice Jeanningros is the research assistant for this project and a doctoral candidate in psychology at the Université du Québec en Outaouais. A biomedical engineer by training, she spent nearly a decade in the biomedical industry before moving into health research. On this study she prepared the ethics submission and supports data collection, analysis and the dissemination of findings. With Dr. Gratton, she coordinates the expert committee that defines the criteria for avoidable and non-avoidable hospital deaths.</p>
+          <ul class="links">
+            <li><a href="https://uqo.ca" target="_blank" rel="noopener">Université du Québec en Outaouais<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="author" id="parsons">
+        <span class="pos" aria-hidden="true">4</span>
+        <div class="content">
+          <h3>Henrique Parsons<span class="cred">MD</span></h3>
+          <p class="role">Palliative care physician</p>
+          <p class="affil"><span><sup>3</sup> Division of Palliative Care, University of Ottawa</span><span><sup>4</sup> The Ottawa Hospital</span></p>
+          <p class="bio">Dr. Henrique Parsons is a palliative medicine physician at The Ottawa Hospital and a member of the Division of Palliative Care at the University of Ottawa. His research looks at hospital-based palliative care and the quality of end-of-life care, including regional studies of patients who died in Ottawa hospitals.</p>
+          <ul class="links">
+            <li><a href="https://www.researchgate.net/profile/Henrique-Parsons" target="_blank" rel="noopener">ResearchGate publications<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="author" id="bouattane">
+        <span class="pos" aria-hidden="true">5</span>
+        <div class="content">
+          <h3>El-Mostafa Bouattane<span class="cred">MD</span></h3>
+          <p class="role">Director, Performance, Decision Support and Privacy Protection</p>
+          <p class="affil"><span><sup>1</sup> Hôpital Montfort</span><span><sup>2</sup> Institut du Savoir Montfort</span></p>
+          <p class="bio">Dr. El-Mostafa Bouattane is Director of the Department of Performance, Decision Support and Privacy Protection at Hôpital Montfort. He is a researcher at the Institut du Savoir Montfort and a lecturer at the University of Ottawa. His research focuses on improving the quality of health care.</p>
+          <ul class="links">
+            <li><a href="https://savoirmontfort.ca/en/scientifiques/el-mostafa-bouattane-md" target="_blank" rel="noopener">Institut du Savoir Montfort profile<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="author" id="isenberg">
+        <span class="pos" aria-hidden="true">6</span>
+        <div class="content">
+          <h3>Sarina R. Isenberg<span class="cred">PhD</span></h3>
+          <p class="role">Bruyère Chair in Mixed Methods Palliative Care Research · Associate Professor</p>
+          <p class="affil"><span><sup>5</sup> Bruyère Health Research Institute</span><span><sup>6</sup> Department of Medicine and School of Epidemiology and Public Health, University of Ottawa</span></p>
+          <p class="bio">Dr. Sarina Isenberg holds the Bruyère Chair in Mixed Methods Palliative Care Research and is an Associate Professor in the Department of Medicine and the School of Epidemiology and Public Health at the University of Ottawa. She has a strong track record of leading home health services studies in palliative care. Her work examines access to palliative care for marginalized and non-cancer populations and tests ways to improve access and quality of care.</p>
+          <ul class="links">
+            <li><a href="https://www.bruyere.org/en/research-sarina-isenberg" target="_blank" rel="noopener">Bruyère profile<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></li>
+            <li><a href="https://www.uottawa.ca/faculty-medicine/dr-sarina-isenberg" target="_blank" rel="noopener">University of Ottawa<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></li>
+            <li><a href="https://www.isenberglab.com" target="_blank" rel="noopener">Isenberg Lab<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></li>
+          </ul>
+        </div>
+      </li>
+
+    </ol>
+  </section>
+
+  <footer>Hôpital Montfort · Institut du Savoir Montfort · Ottawa, Ontario</footer>
+</div>
+</body>
+</html>
